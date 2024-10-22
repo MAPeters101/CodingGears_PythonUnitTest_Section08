@@ -10,7 +10,7 @@ def create_test_environment():
     return calci
 
 
-# TODO: Add custom marker
+@pytest.mark.both_positive
 def test_addition_100(create_test_environment):
     create_test_environment.number1 = 10
     create_test_environment.number2 = 50
@@ -18,7 +18,7 @@ def test_addition_100(create_test_environment):
     assert result == 60
 
 
-# TODO: Add custom marker
+@pytest.mark.one_negative
 def test_addition_200(create_test_environment):
     create_test_environment.number1 = -50
     create_test_environment.number2 = 30
@@ -26,7 +26,7 @@ def test_addition_200(create_test_environment):
     assert result == -20
 
 
-# TODO: Add custom marker
+@pytest.mark.both_negative
 def test_addition_300(create_test_environment):
     create_test_environment.number1 = -10
     create_test_environment.number2 = -50
